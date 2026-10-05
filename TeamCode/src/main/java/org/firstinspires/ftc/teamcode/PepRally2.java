@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "PepRally2.java")
-public class PepRally1 extends LinearOpMode {
+public class PepRally2 extends LinearOpMode {
 
     private DcMotor motor01launcher;
     private DcMotor motor04launcher;
@@ -17,10 +17,10 @@ public class PepRally1 extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        motor01launcher = hardwareMap.get(DcMotor.class, "motor01 -launcher");
-        motor04launcher = hardwareMap.get(DcMotor.class, "motor04 -launcher");
-        motor02leftwheel = hardwareMap.get(DcMotor.class, "motor02 -left wheel");
-        motor03rightwheel = hardwareMap.get(DcMotor.class, "motor03 -right wheel");
+        motor01launcher = hardwareMap.get(DcMotor.class, "motor00");
+        motor04launcher = hardwareMap.get(DcMotor.class, "motor04");
+        motor02leftwheel = hardwareMap.get(DcMotor.class, "motor02");
+        motor03rightwheel = hardwareMap.get(DcMotor.class, "motor03");
         servo0 = hardwareMap.get(Servo.class, "servo 0");
         waitForStart();
         while (opModeIsActive()) {
