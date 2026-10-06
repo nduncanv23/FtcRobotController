@@ -33,7 +33,7 @@ public class PepRally2 extends LinearOpMode {
             motor02leftwheel.setPower(gamepad1.right_stick_x);
             motor03rightwheel.setPower(gamepad1.left_stick_x);
             //
-            if (gamepad1.left_trigger) {
+            if (gamepad1.left_trigger > 0) {
                 motor01launcher.setDirection(DcMotor.Direction.FORWARD);
                 motor01launcher.setPower(gamepad1.left_trigger);
             }
