@@ -18,9 +18,9 @@ public class PepRally2 extends LinearOpMode {
     @Override
     public void runOpMode() {
         motor01launcher = hardwareMap.get(DcMotor.class, "motor00");
-        motor04launcher = hardwareMap.get(DcMotor.class, "motor04");
-        motor02leftwheel = hardwareMap.get(DcMotor.class, "motor02");
-        motor03rightwheel = hardwareMap.get(DcMotor.class, "motor03");
+        motor04launcher = hardwareMap.get(DcMotor.class, "motor03");
+        motor02leftwheel = hardwareMap.get(DcMotor.class, "motor01");
+        motor03rightwheel = hardwareMap.get(DcMotor.class, "motor02");
         servo0 = hardwareMap.get(Servo.class, "servo 0");
         waitForStart();
         while (opModeIsActive()) {
@@ -33,7 +33,10 @@ public class PepRally2 extends LinearOpMode {
             motor02leftwheel.setPower(gamepad1.right_stick_x);
             motor03rightwheel.setPower(gamepad1.left_stick_x);
             //
-            motor04launcher.setPower(gamepad1.left_trigger);
+            if (motor01launcher.setPower(gamepad1.left_trigger)) {
+                motor01launcher.setDirection(DcMotor.Direction.REVERSE);
+            }
+            // motor01launcher.setPower(gamepad1.left_trigger);
             motor01launcher.setPower(gamepad1.right_trigger);
             if (gamepad1.dpad_up) {
                 servo0.setPosition(0);
