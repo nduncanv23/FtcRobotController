@@ -39,12 +39,14 @@ public class PepRally1 extends LinearOpMode {
                 servo0.setPosition(0);
             }
             if (gamepad1.dpad_down) {
-                servo0.setPosition(90);
+                servo0.setPosition(45);
             }
             if (gamepad1.dpad_left) {
-                servo0.setPosition(270);
+                servo0.setPosition(10);
             }
-
+            if (gamepad1.dpad_right) {
+                servo0.setPosition(-90);
+            }
         }
 
     }
